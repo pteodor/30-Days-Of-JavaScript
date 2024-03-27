@@ -1,0 +1,22 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  name: Default
+
+steps:
+- task: UseJavaVersion@1
+  inputs:
+    versionSpec: '8'
+    addToPath: true
+
+- script: 'npx eslint --ext .js --format checkstyle 30DaysOfJavaScript/ > report.xml'
+  displayName: 'Run ESLint and generate report'
+  
+- script: '
+"C:\Program Files\Parasoft\MLP\multilanguage-pack.bat" -tool ESLint -results.file "C:\home\demo_apps\javascript\report.xml" -source.dir "C:\home\demo_apps\javascript\30DaysOfJavaScript"'
