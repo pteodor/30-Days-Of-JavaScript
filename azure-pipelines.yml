@@ -14,6 +14,8 @@ steps:
 
 - script: 'pwd'
 
+- script: 'ls'
+
 - script: 'npx eslint --ext .js --format checkstyle 30-Days-Of-JavaScript/ > report.xml'
   displayName: 'Run ESLint and generate report'
   
