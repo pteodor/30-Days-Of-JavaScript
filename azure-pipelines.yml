@@ -11,13 +11,11 @@ pool:
 
 steps:
 - script: 'set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_202'
-
-- script: 'pwd'
-
-- script: 'ls'
+  displayName: 'Set JAVA_HOME to Java 8'
 
 - script: 'npx eslint --ext .js --format checkstyle * > report.xml || exit 0'
   displayName: 'Run ESLint and generate report'
   
 - script: '
 "C:\Program Files\Parasoft\MLP\multilanguage-pack.bat" -tool ESLint -results.file "C:\home\demo_apps\javascript\report.xml" -source.dir "C:\home\demo_apps\javascript\30DaysOfJavaScript"'
+  displayName: 'Run Multi-Language Pack'
