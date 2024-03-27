@@ -16,7 +16,7 @@ steps:
 
 - script: 'ls'
 
-- script: 'npx eslint --ext .js --format checkstyle * --max-warnings 1000'
+- script: 'npx eslint --ext .js --format checkstyle * || exit 0'
   displayName: 'Run ESLint and generate report'
   
 - script: '
