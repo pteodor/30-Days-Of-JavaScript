@@ -16,7 +16,7 @@ steps:
 
 - script: 'ls'
 
-- script: 'npx eslint --ext .js --format checkstyle * > report.xml'
+- script: 'npx eslint --ext .js --format checkstyle *'
   displayName: 'Run ESLint and generate report'
   
 - script: '
