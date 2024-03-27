@@ -12,7 +12,7 @@ pool:
 steps:
 - script: 'set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_202'
 
-- script: 'npx eslint --ext .js --format checkstyle 30DaysOfJavaScript/ > report.xml'
+- script: 'npx eslint --ext .js --format checkstyle 30-Days-Of-JavaScript/ > report.xml'
   displayName: 'Run ESLint and generate report'
   
 - script: '
